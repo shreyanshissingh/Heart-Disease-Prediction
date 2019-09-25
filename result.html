@@ -1,0 +1,15 @@
+{% include 'index.html' %}
+
+<div id="header"></div>
+<h2>Model Summary and Output</h2>
+<form action=".">
+<label>Values passed :{{ip}}</label><br>
+<label>Heart Disease predicted: {{t}}</label><br>
+<label>Method Used : {{algo}}</label><br>
+<label>F-Score : {{f_score}}</label><br>
+<label>AUC_Score : {{auc_plot}}</label><br>
+<label>Confusion Matrix : {{confusion_matrix}}</label><br>
+<h2>AUC Plot<h2>
+<img src="{{response}}" alt="Area under Curve">
+</body>
+</html>

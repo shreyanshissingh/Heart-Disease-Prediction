@@ -1,0 +1,82 @@
+{% include 'index.html' %}
+
+	
+	
+<div id="header"></div>
+<form action="."  method="post" id="numform" style="width : 500px; margin: auto" oninput="x.value=parseInt(thalach.value)" onsubmit="return checkForBlank()">
+<h3>Enter below form details</h3>
+<div>
+	<br><label>Gender <span class="required">*</span></label><br>
+	<input type="radio" name="sex" value="0">Male
+	<input type="radio" name="sex" value="1" checked>Female
+</div>
+<div>
+	<br><label>Algo <span class="required">*</span></label>
+	  <select name="algo" id="gender" class="form-control">
+		<option value="svm">SVM</option>
+		<option value="knn">KNN</option>
+		<option value="lr">LR</option>
+	  </select>
+</div>
+<div>
+	<label>CA: <span class="required">*</span></label>
+	<input type="text" id="ca" name="ca" class="form-control" value="">
+</div>
+<div>
+	<label>CP: <span class="required">*</span></label>
+	<input type="text" id="cp" name="cp" class="form-control" value="">  
+</div>
+<div>
+	<label>Exang: <span class="required">*</span></label>
+	<input type="text" id="exang" name="exang" class="form-control" value="">
+</div>
+<div>
+	<label>Old Peak: <span class="required">*</span></label>
+	<input type="text" id="oldpeak" name="oldpeak" class="form-control" value="">  
+</div>
+<div>
+	<label>Thal: <span class="required">*</span></label>
+	<input type="text" id="thal" name="thal" class="form-control" value="">
+</div>
+<div>
+	<label>Thalach: <span class="required">*</span></label>
+	50 &nbsp <input type="range" id="thalach" name="thalach" value=" " min="50" max="250"> &nbsp 250
+</div>
+<output form="numform" name="x" for="thalach"></output><br>
+<br><button type="submit" formaction="/results" value="Submit">Submit</button><br>
+
+<br><label>* = Mandatory Fields</label>
+</form> 
+
+<script>
+	function checkForBlank(){
+	
+	var errormsg="";
+	if (document.getElementById('ca').value==""){
+	errormsg+="CA cannot be blank \n"
+	document.getElementById('ca').style.borderColor="red";
+	}
+	if (document.getElementById('cp').value==""){
+	errormsg+="CP cannot be blank \n"
+	document.getElementById('cp').style.borderColor="red";
+	}
+	if (document.getElementById('exang').value==""){
+	errormsg+="Exang cannot be blank \n"
+	document.getElementById('exang').style.borderColor="red";
+	}
+	if (document.getElementById('oldpeak').value==""){
+	errormsg+="Oldpeak cannot be blank \n"
+	document.getElementById('oldpeak').style.borderColor="red";
+	}
+	if (document.getElementById('thal').value==""){
+	errormsg+="Thal cannot be blank \n"
+	document.getElementById('thal').style.borderColor="red";
+	}
+	if(errormsg !=""){
+	alert(errormsg);
+	return false;
+	}
+	}
+</script>
+</body
+</html>
